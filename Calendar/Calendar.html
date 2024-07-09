@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet" href="Calendar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="select_year_main_body">
+
+    </div>
+    <div class="menu_btn" onclick="Show_navbar()" id="menu_img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+    </div>
+    <div class="menu" id="menu">
+        <div class="year">
+            <h1>Year</h1>
+            <span id="meny_year" onclick="select_year()">2024</span>
+        </div>
+        <div class="month">
+            <div class="jan mon" onclick="remove(); Create_Cal(1)">JANUARY</div>
+            <div class="feb mon" onclick="remove(); Create_Cal(2)">FEBRUARY</div>
+            <div class="mar mon" onclick="remove(); Create_Cal(3)">MARCH</div>
+            <div class="apr mon" onclick="remove(); Create_Cal(4)">APRIL</div>
+            <div class="may mon" onclick="remove(); Create_Cal(5)">MAY</div>
+            <div class="jun mon" onclick="remove(); Create_Cal(6)">JUNE</div>
+            <div class="jul mon" onclick="remove(); Create_Cal(7)">JULY</div>
+            <div class="aug mon" onclick="remove(); Create_Cal(8)">AUGUST</div>
+            <div class="sep mon" onclick="remove(); Create_Cal(9)">SEPTEMBER</div>
+            <div class="oct mon" onclick="remove(); Create_Cal(10)">OCTOBER</div>
+            <div class="nov mon" onclick="remove(); Create_Cal(11)">NOVEMBER</div>
+            <div class="dec mon" onclick="remove(); Create_Cal(12)">DECEMBER</div>
+
+        </div>
+
+    </div>
+    <div class="main_body">
+        <div class="calendar" id="calendar">
+            <div class="upper_cal">
+                <div class="current_month" id="current_month">
+                </div>
+                <div class="current_year" id="current_year">
+                </div>
+
+
+            </div>
+            <div class="lower_cal">
+                <div class="days">
+                    <div class="monday all_days">
+                        Monday
+                    </div>
+                    <div class="tuesday all_days">
+                        Tuesday
+                    </div>
+                    <div class="wednesday all_days">
+                        Wednesday
+                    </div>
+                    <div class="thursday all_days">
+                        Thursday
+                    </div>
+                    <div class="friday all_days">
+                        Friday
+                    </div>
+                    <div class="saturday all_days">
+                        Saturday
+                    </div>
+                    <div class="sunday all_days">
+                        Sunday
+                    </div>
+                </div>
+                <div class="dates" id="dates">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="list_main_body" id="list_main_body">
+        <div class="back_btn" onclick="open_list_main(current_day, current_mon,current_year)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor"
+                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+            </svg>
+        </div>
+        <div class="list_head">
+            <div class="date_list_head" id="date_list_head">
+                19 / JULY / 2024
+            </div>
+            <hr>
+            <div class="day_list_head" id="day_list_head">
+                MONDAY
+            </div>
+            <hr>
+
+        </div>
+        <div class="list_body">
+            <div class="options_list_body">
+                <div class="add_work" id="add_work" onclick="add_work(current_day, current_mon,current_year)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                        class="bi bi-plus" viewBox="0 0 16 16">
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                    </svg>
+                </div>
+                <div class="remove_work" id="remove_work" onclick="remove_work()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                    </svg>
+
+                </div>
+            </div>
+            <div class="all_list_body" id="all_list_body">
+
+            </div>
+
+        </div>
+    </div>
+    <script src="Calendar.js"></script>
+</body>
+
+</html>

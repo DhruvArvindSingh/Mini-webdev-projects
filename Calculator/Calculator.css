@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer_body {
+    background-color: rgb(27, 26, 26);
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner_body {
+    background-color: rgb(93, 89, 89);
+    width: 278px;
+    height: 438px;
+    border-radius: 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper_body {
+    width: 270px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    height: 100px;
+    display: flex;
+    /* background-color: bisque; */
+    /* border-radius: 10px; */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icons_upper_body{
+    width: 100%;
+    /* background-color: aquamarine; */
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clear_all{
+    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    background-color:orange;
+    font-weight: 700;
+}
+.remove{
+    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    font-size: 120%;
+    background-color:orange;
+}
+.display{
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    /* background-color: blue; */
+    width: 98%;
+    height: 80%;
+    font-size: 300%;
+}
+
+.lower_body {
+    /* background-color: aqua; */
+    width: 270px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.column button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24%;
+    height: 83%;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 10px;
+    font-size: larger;
+    background-color: rgb(209, 207, 207);
+}
+#equal{
+    background-color:orange;
+
+}

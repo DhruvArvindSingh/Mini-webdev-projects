@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="outer_body">
+        <div class="inner_body">
+            <div class="upper_body">
+                <div class="icons_upper_body">
+                    <button class="clear_all" onclick="display('clearall')">CLEAR ALL</button>
+                    <button class="remove" onclick="display('remove')"><i class="bi bi-backspace-fill"></i></button>
+                </div>
+                <span class="display" id="display">0</span>
+            </div>
+            <div class="lower_body">
+                <div class="first column">
+                    <button class="7 button" onclick="display('7')">7</button>
+                    <button class="8 button" onclick="display('8')">8</button>
+                    <button class="9 button" onclick="display('9')">9</button>
+                    <button class="/ button" onclick="display('/')">/<i class="fa-solid fa-divide"></i></button>
+                </div>
+                <div class="second column">
+                    <button class="4 button" onclick="display('4')">4</button>
+                    <button class="5 button" onclick="display('5')">5</button>
+                    <button class="6 button" onclick="display('6')">6</button>
+                    <button class="x button" onclick="display('x')">x</button>
+                </div>
+                <div class="third column">
+                    <button class="1 button" onclick="display('1')">1</button>
+                    <button class="2 button" onclick="display('2')">2</button>
+                    <button class="3 button" onclick="display('3')">3</button>
+                    <button class="- button" onclick="display('-')">-</button>
+                </div>
+                <div class="fourth column">
+                    <button class="point button" onclick="display('.')">.</button>
+                    <button class="0 button" onclick="display('0')">0</button>
+                    <button class="+ button" onclick="display('+')">+</button>
+                    <button class="=" id="equal" onclick="Answer()">=</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Calculator.js"></script>
+</body>
+
+</html>
