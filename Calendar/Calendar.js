@@ -19,6 +19,54 @@ let list_main_body = document.getElementById("list_main_body");
 let date_list_head = document.getElementById("date_list_head");
 let day_list_head = document.getElementById("day_list_head");
 let all_list_body = document.getElementById("all_list_body");
+let imp_days = {
+    "17:7:2024": "h_Muharram",
+    "15:8:2024": "h_Independence Day",
+    "26:8:2024": "h_Janmashtami",
+    "16:9:2024": "h_Eid-E-Milad ",
+    "2:10:2024": "h_Gandhi Jayanti ",
+    "12:10:2024": "h_Dusshera",
+    "31:10:2024": "h_Diwali",
+    "15:11:2024": "h_Gurunanak Jayanti",
+    "25:12:2024": "h_Christmas Day",
+    "26:1:2025": "h_Republic Day",
+    "13:3:2025": "h_Holika dahan",
+    "30:3:2025": "h_Eid-Ul-Fitr",
+    "6:4:2025": "h_Ram Navmi",
+    "10:4:2025": "h_Mahavir Jayanti",
+    "18:4:2025": "h_Good Friday",
+    "22:7:2024": "a_Semester Start",
+    "5:8:2024": "a_Last Date for Add and Drop of Elective Course",
+    "27:8:2024": "ae_Sessional - I Exam",
+    "28:8:2024": "ae_Sessional - I Exam",
+    "29:8:2024": "ae_Sessional - I Exam",
+    "30:8:2024": "ae_Sessional - I Exam",
+    "6:9:2024": "a_Last Day of Sessional 1 Marks",
+    "23:9:2024": "a_Final Year Projects and Internship Presentations",
+    "24:9:2024": "a_Final Year Projects and Internship Presentations",
+    "7:10:2024": "ae_Sessional - II Exam",
+    "8:10:2024": "ae_Sessional - II Exam",
+    "9:10:2024": "ae_Sessional - II Exam",
+    "10:10:2024": "ae_Sessional - II Exam",
+    "18:10:2024": "a_Last Date of Sessional - II Marks",
+    "18:11:2024": "a_Last Date of Teaching",
+    "21:11:2024": "ae_End Sem Exam",
+    "22:11:2024": "ae_End Sem Exam",
+    // "23:11:2024": "a_End Sem Exam",
+    // "24:11:2024": "a_End Sem Exam",
+    "25:11:2024": "ae_End Sem Exam",
+    "26:11:2024": "ae_End Sem Exam",
+    "27:11:2024": "ae_End Sem Exam",
+    "28:11:2024": "ae_End Sem Exam",
+    "29:11:2024": "ae_End Sem Exam",
+    // "30:11:2024": "a_End Sem Exam",
+    // "1:11:2024": "a_End Sem Exam",
+    "2:12:2024": "ae_End Sem Exam",
+    "3:12:2024": "ae_End Sem Exam",
+
+
+}
+
 function Show_navbar() {
 
     if (navbar_stat == 0) {
@@ -32,12 +80,12 @@ function Show_navbar() {
 
             }, 250
         )
-        main_body.style.transform = "translate(230px)"
+        // main_body.style.transform = "translate(230px)"
         if (list_stat == 1) {
             main_body.style.width = "50%";
         }
         else {
-            main_body.style.width = "60%";
+            main_body.style.width = "55%";
         }
         console.log(main_body.style.width);
 
@@ -57,10 +105,10 @@ function Show_navbar() {
             }, 250
         )
         if (list_stat == 1) {
-            main_body.style.width = "60%";
+            main_body.style.width = "55%";
         }
         else {
-            main_body.style.width = "70%";
+            main_body.style.width = "60%";
         }
         main_body.style.transform = "translate(0px)"
         console.log(main_body.style.width);
@@ -99,8 +147,35 @@ function Create_Cal(month) {
         }
         else {
             let new_day = document.createElement("div");
-            new_day.innerHTML = `${i - first_day + 1}`;
-            new_day.setAttribute("id", `${i - first_day + 1}:${month}:${year}`);
+            // new_day.setAttribute("id", `${i - first_day + 1}:${month}:${year}`);
+            if (imp_days[`${i - first_day + 1}:${month}:${year}`]) {
+                let imp = imp_days[`${i - first_day + 1}:${month}:${year}`];
+                if (imp.startsWith("h_")) {
+                    new_day.innerHTML = `<span class = "holiday" id = "${i - first_day + 1}:${month}:${year}" name = "holiday">${i - first_day + 1}</span>`;
+                    // new_day.setAttribute("name", `holiday`);
+                    // new_day.setAttribute("class", `holiday`);
+                }
+                else if (imp.startsWith("a_")) {
+                    new_day.innerHTML = `<span class = "academic_event" id = "${i - first_day + 1}:${month}:${year}" name = "academic_event">${i - first_day + 1}</span>`;
+                    // new_day.setAttribute("name", `academic_event`);
+                    // new_day.setAttribute("class", `academic_event`);
+                }
+                else if (imp.startsWith("i_")) {
+                    new_day.innerHTML = `<span class = "institute_event" id = "${i - first_day + 1}:${month}:${year}" name = "institute_event">${i - first_day + 1}</span>`;
+                    // new_day.setAttribute("name", `institute_event`);
+                    // new_day.setAttribute("class", `institute_event`);
+
+                }
+                else if (imp.startsWith("ae_")) {
+                    new_day.innerHTML = `<span class = "academic_exam" id = "${i - first_day + 1}:${month}:${year}" name = "academic_exam">${i - first_day + 1}</span>`;
+                    // new_day.setAttribute("name", `institute_event`);
+                    // new_day.setAttribute("class", `institute_event`);
+
+                }
+            }
+            else {
+                new_day.innerHTML = `<span class = "circle" id = "${i - first_day + 1}:${month}:${year}">${i - first_day + 1}</span>`;
+            }
             new_day.setAttribute("onclick", `open_list_main(${i - first_day + 1},${month},${year})`);
             dates.append(new_day);
 
@@ -150,7 +225,7 @@ function open_list_main(day, month_, year) {
             main_body.style.width = "50%";
         }
         else {
-            main_body.style.width = "60%";
+            main_body.style.width = "55%";
 
         }
         console.log(main_body.style.width);
@@ -160,10 +235,10 @@ function open_list_main(day, month_, year) {
         list_stat = 0;
         list_main_body.style.transform = "translateX(0%)";
         if (navbar_stat == 1) {
-            main_body.style.width = "60%";
+            main_body.style.width = "55%";
         }
         else {
-            main_body.style.width = "70%";
+            main_body.style.width = "60%";
 
         }
         console.log(main_body.style.width);

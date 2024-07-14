@@ -4,11 +4,11 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: #030048;
+    color: #ffffff;
 }
 
 hr {
-    color: black;
+    color: rgb(255, 255, 255);
     height: 1px;
     width: 100%;
 
@@ -108,18 +108,18 @@ body {
 .main_body {
     width: 100vw;
     height: 100vh;
-    background-color: #845EC2;
-    color: #4B4453;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
-    /* justify-content:center ; */
+    justify-content: center;
     align-items: center;
     /* position: relative; */
 
 }
 
 .calendar {
-    width: 70%;
-    height: 85%;
+    width: 60%;
+    height: 100%;
     margin-left: 60px;
     /* background-color: #EBF4F6; */
     display: flex;
@@ -134,22 +134,26 @@ body {
 .upper_cal {
     width: 95%;
     height: 20%;
-    border-bottom: 1px solid white;
+    border-bottom: 0.2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
     /* background-color: green; */
 
 }
 
 .current_month {
     font-size: 350%;
-    color: black;
-    padding-left: 10px;
+    color: rgb(255, 255, 255);
+    /* padding-left: 10px; */
     font-family: cursive;
 }
 
 .current_year {
-    padding-left: 10px;
+    /* padding-left: 10px; */
     font-size: 150%;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: cursive;
 
 }
@@ -168,7 +172,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 100%;
     height: 10%;
     /* background-color: #37B7C3; */
 }
@@ -182,12 +186,12 @@ body {
     font-size: 130%;
     height: 10%;
     /* background-color: #37B7C3; */
-    color: black;
+    color: rgb(255, 255, 255);
 
 }
 
 .dates {
-    width: 95%;
+    width: 100%;
     height: 90%;
     /* background-color: aliceblue; */
     display: grid;
@@ -195,7 +199,6 @@ body {
     row-gap: 5px;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: auto auto auto auto auto auto auto;
-    cursor: pointer;
 
 
 }
@@ -205,24 +208,85 @@ body {
     height: auto;
     display: flex;
     font-size: 150%;
-    border: 0.1px solid black;
+    /* border: 0.1px solid black; */
     /* background-color: bisque; */
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     color: black;
     /* background-color: rgb(64, 26, 219); */
     /* opacity: 0.5; */
     border-radius: 500px;
 }
 
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 60%;
+    /* background-color: #ffffff; */
+    border-radius: 500px;
+    cursor: pointer
+}
+
+.circle:hover {
+    border: 1px solid rgb(245, 235, 235);
+    color: rgb(169, 164, 164);
+    /* font-size: 105%; */
+}
+
+.holiday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 60%;
+    background-color: orangered;
+    border-radius: 500px;
+    cursor: pointer
+}
+
+.academic_event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 60%;
+    background-color: rgb(30, 255, 82);
+    border-radius: 500px;
+    cursor: pointer
+}
+
+.institute_event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 60%;
+    background-color: rgb(0, 157, 255);
+    border-radius: 500px;
+    cursor: pointer
+}
+
+.academic_exam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 60%;
+    background-color: rgb(221, 255, 29);
+    border-radius: 500px;
+    cursor: pointer
+}
+
 /* LIST */
 
 .list_main_body {
-    width: 415px;
+    width: 300px;
     height: 100vh;
     background-color: #FBEAFF;
     position: absolute;
-    right: -415px;
+    right: -300px;
     display: flex;
     top: 0px;
     justify-content: center;
